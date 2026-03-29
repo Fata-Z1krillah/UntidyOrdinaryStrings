@@ -1,0 +1,224 @@
+**✅ PRD yang sudah direvisi (Versi 1.1)**  
+
+**Learning Management System (LMS) Bimbingan Bahasa Arab Berbasis Web**  
+
+**Menggunakan Framework Laravel 12**  
+
+**Pada Bait Tahfiz Al-Quran Ridhallah (BTQR)**  
+
+**Versi:** 1.1  
+
+**Tanggal Revisi:** 29 Maret 2026  
+
+**Revisi utama:**  
+
+- Laravel **12** (versi resmi terbaru per 2026)  
+
+- full-stack Laravel dengan Blade + Livewire
+
+- Semua fitur tetap sama, hanya frontend diubah agar lebih ringkas dan sesuai Laravel native.
+
+### 1. Ringkasan Eksekutif
+
+BTQR membutuhkan LMS untuk bimbingan bahasa Arab agar peserta dari luar Aceh dapat mengikuti secara daring.  
+
+Sistem ini dikembangkan **menggunakan Laravel 12** sebagai full-stack framework dengan pendekatan **Blade + Livewire** (tidak menggunakan Vue.js).  
+
+Hasilnya: aplikasi web yang cepat, ringan, mudah dimaintain, dan tetap interaktif tanpa perlu framework JavaScript berat.
+
+### 2. Tujuan Produk
+
+- Merancang dan mengembangkan LMS bimbingan bahasa Arab berbasis web menggunakan **Laravel 12**.
+
+- Mendukung proses pembelajaran yang efektif, terstruktur, dan dapat diakses dari mana saja.
+
+- Mengatasi keterbatasan lokasi fisik BTQR.
+
+### 3. Pengguna Target (Users & Roles)
+
+Sama seperti sebelumnya:  
+
+| Role              | Deskripsi                                      | Jumlah Estimasi |
+
+|-------------------|------------------------------------------------|-----------------|
+
+| Administrator     | Pengelola BTQR                                 | 1-2 orang       |
+
+| Guru/Pengajar     | Pengajar bahasa Arab                           | 3-5 orang       |
+
+| Peserta Didik     | Santri/siswa                                   | 50-200+ orang   |
+
+### 4. Fitur Utama & Persyaratan Fungsional (FR)
+
+Semua fitur tetap **100% sama** seperti PRD sebelumnya (autentikasi, materi, tugas, quiz, dashboard, progress, pengumuman, export nilai, dll).  
+
+Hanya cara implementasi frontend yang berubah menjadi:
+
+- **Blade Templates** (server-side rendering)
+
+- **Livewire 3** (untuk bagian interaktif: upload tugas real-time, progress bar, form dinamis, quiz, dll.)
+
+- **Alpine.js** (untuk efek kecil seperti dropdown, modal, toast)
+
+- **Tailwind CSS** (styling modern & responsive)
+
+### 5. Persyaratan Non-Fungsional (NFR)
+
+- **Teknologi Stack (diperbarui):**
+
+  - **Backend:** Laravel 12 (PHP 8.2–8.5)
+
+  - **Frontend:** Blade + Livewire 3 + Alpine.js + Tailwind CSS + Vite (asset bundling)
+
+  - **Database:** MySQL 8
+
+  - **Autentikasi:** Laravel Breeze (Blade stack) atau Jetstream (Blade + Livewire)
+
+  - **Storage:** Laravel Storage (bisa lokal atau S3)
+
+  - **Queue & Notification:** Laravel Horizon + Redis (opsional)
+
+  - **Testing:** PHPUnit + Laravel Dusk (browser testing)
+
+- Performance: Page load < 2 detik
+
+- Security: Laravel Sanctum (API internal), validation ketat, HTTPS
+
+- Responsive: Mobile-first (peserta banyak akses via HP)
+
+- Bahasa: Indonesia + full support teks Arab (RTL)
+
+### 6. Metode Pengembangan
+
+**Waterfall** (sesuai proposal skripsi)  
+
+Tahapan tetap sama, hanya implementasi sekarang lebih sederhana karena tidak ada pemisahan frontend-backend.
+
+### 7. Data Model Utama
+
+Sama persis seperti PRD sebelumnya (users, courses, materials, assignments, submissions, quizzes, announcements, progress).
+
+### 8. User Stories Prioritas
+
+Tetap sama (semua bisa diimplementasikan dengan Livewire).
+
+### 9. Out of Scope
+
+- Video conference live
+
+- Mobile app native
+
+- Integrasi pembayaran
+
+### 10. Metode Pengembangan (sesuai proposal)
+
+**Waterfall** (tahap demi tahap):
+
+1. **Requirements Analysis** (sudah selesai – PRD ini).
+
+2. **System Design** (ERD, API design, UI/UX wireframe).
+
+3. **Implementation** (coding Laravel 12).
+
+4. **Testing** (unit, integration, user acceptance).
+
+5. **Deployment & Maintenance**.
+
+### 11. Data Model Utama (untuk AI generate migration)
+
+- **users** (id, name, email, password, role, avatar)
+
+- **courses** (id, title, description, teacher_id)
+
+- **materials** (id, course_id, title, description, file_path, type)
+
+- **assignments** (id, course_id, title, description, deadline, max_score)
+
+- **submissions** (id, assignment_id, student_id, file_path, score, feedback)
+
+- **quizzes** & **quiz_questions** & **quiz_answers**
+
+- **announcements**
+
+- **progress** (tracking materi & tugas)
+
+### 12. User Stories Prioritas (siap dipakai AI untuk sprint)
+
+1. As a **Peserta**, saya ingin login agar bisa mengakses materi dan tugas.
+
+2. As a **Peserta**, saya ingin melihat daftar materi dan mengunduhnya.
+
+3. As a **Peserta**, saya ingin mengunggah jawaban tugas sebelum deadline.
+
+4. As a **Guru**, saya ingin membuat materi dan tugas baru.
+
+5. As a **Guru**, saya ingin menilai tugas yang dikumpulkan peserta.
+
+6. As a **Admin**, saya ingin mengelola semua user dan kelas.
+
+
+
+Prioritas Yang Di Utamakan dalam membangun project ini 
+1. menggunakan laravel 12
+2. PHP 8.3
+3. Menerapkan untuk nativephp dari https://nativephp.com untuk build app mobile
+4. Dokumentasi yang jelas README.md
+
+
+
+Saya akan membantu Anda membangun LMS Bimbingan Bahasa Arab untuk BTQR. Sebelum saya mulai perencanaan dan implementasi, saya perlu mengklarifikasi beberapa hal:
+
+Action: Sebelum saya mulai implementasi LMS, saya ingin mengklarifikasi beberapa pilihan teknis:
+
+1. **Autentikasi**: yang anda inginkan?
+
+2. **Email Service** (untuk verifikasi & notifikasi) ?
+
+3. **File Storage** (untuk materi PDF, audio, video):
+
+   a. Local storage (Laravel public disk)
+
+   b. Cloud storage (S3 atau object storage)
+
+4. **UI Framework untuk Laravel 12**:
+
+5. **Preferensi Desain Visual**:
+
+   - Apakah ada preferensi warna/tema khusus? (misal: hijau Islamic, biru profesional, dll.)
+
+   - Atau saya gunakan desain modern yang sesuai untuk lembaga pendidikan Islam?
+
+6. Siapa yang berhak mengunggah materi pembelajaran?
+
+7. Format sertifikat penyelesaian kursus bagaimana?
+
+8. Jenis tugas apa yang tersedia untuk siswa?
+
+9. Metode pendaftaran akun pengguna seperti apa?
+
+
+
+pilihan saya:
+
+1. bisa login email biasa dan juga bisa menggunakan akun google
+
+2. Tidak perlu verifikasi dan notifikasi cukup di web saja
+
+3  a. Local storage (Laravel public disk
+
+4. Tailwind CSS (modern, customizable)
+
+5. gunakan desain modern yang sesuai untuk lembaga pendidikan Islam
+
+6. Guru Saja
+
+7. Dalam bentuk pdf yang dibuat manual oleh guru dan di upload ke user yang telah berhak claim sertifikat
+
+8. Pilihan ganda, essay, dan upload
+
+9. Mendaftar secara manual di lokasi lalu panitia akan meminta akun gmail aktif untuk didaftar kan diweb lalu akan mensetup password contoh password menggunakan format tanggal lahir untuk login seperti 070705 ( dua angka tanggal lahir, dua angka bulan lahir, dan dua angka tahun lahir ) 
+
+
+
+
+
